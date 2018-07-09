@@ -422,7 +422,7 @@ async def uptime_system():
             ut_minutes.append("+1")
         else:
             ut_seconds.append("+1")
-        await asyncio.sleep(1)
+        await asyncio.sleep(1200)
 
 client.loop.create_task(uptime_system())
 
