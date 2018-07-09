@@ -13,7 +13,7 @@ import re
 Client = discord.Client()
 bot_prefix= "stphnad!"
 client = commands.Bot(command_prefix=bot_prefix)
-footer_text = "[+] Get STPHN - Advertiser Bot: https://notsetyet.com [+]"
+footer_text = "[+] Get STPHN Advertiser Bot: https://notsetyet.com [+]"
 
 help_msg1 = "```diff"
 help_msg1 += "\n- COMMANDS FOR EVERYONE -"
@@ -78,10 +78,10 @@ tos_msg += "\n**~~=~~** Breaking any of these rules will get you and/or your ser
 tos_msg += "\n "
 tos_msg += "\n**__You can use `stphnad!help` to see a list of commands!__**"
 
-test_msg_img = "https://i.imgur.com/3zHcRpt.png"
-announcement_img = "https://i.imgur.com/2m9gzUm.png"
+test_msg_img = "https://i.imgur.com/lv6DwLI.png"
+announcement_img = "https://i.imgur.com/eyjxXIe.png"
 new_server_img = "https://i.imgur.com/79FgWOd.png"
-special_server_img = "https://i.imgur.com/3cfnbBm.png"
+special_server_img = "https://i.imgur.com/pRDbbnV.png"
 random_servers_chnl = '456082507515822080'
 console_chnl = '456082517204926466'
 logs_chnl = '456082848038912000'
