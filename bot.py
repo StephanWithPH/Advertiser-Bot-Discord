@@ -13,7 +13,7 @@ import re
 Client = discord.Client()
 bot_prefix= "stphnad!"
 client = commands.Bot(command_prefix=bot_prefix)
-footer_text = "[+] Get STPHN Advertiser Bot: https://notsetyet.com [+]"
+footer_text = "[+] Get STPHN - Advertiser Bot: https://notsetyet.com [+]"
 
 help_msg1 = "```diff"
 help_msg1 += "\n- COMMANDS FOR EVERYONE -"
