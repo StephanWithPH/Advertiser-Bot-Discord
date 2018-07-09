@@ -11,7 +11,7 @@ import re
 ''''''
 
 Client = discord.Client()
-bot_prefix= "stphnstphnad!"
+bot_prefix= "stphnad!"
 client = commands.Bot(command_prefix=bot_prefix)
 footer_text = "[+] Get STPHN Advertiser Bot: https://notsetyet.com [+]"
 
