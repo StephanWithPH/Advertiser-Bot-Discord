@@ -406,7 +406,7 @@ async def autoad():
             print("[AUTO AD] FINISHED")
         except:
             print("[AUTO AD ERRORS] GLOBAL")
-        await asyncio.sleep(2)
+        await asyncio.sleep(1200)
 
 client.loop.create_task(autoad())
         
