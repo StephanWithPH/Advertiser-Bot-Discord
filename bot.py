@@ -11,53 +11,53 @@ import re
 ''''''
 
 Client = discord.Client()
-bot_prefix= "stphnad!"
+bot_prefix= "ad!"
 client = commands.Bot(command_prefix=bot_prefix)
 footer_text = "[+] Get STPHN Advertiser Bot: https://notsetyet.com [+]"
 
 help_msg1 = "```diff"
 help_msg1 += "\n- COMMANDS FOR EVERYONE -"
-help_msg1 += "\nstphnad!help\n+ Gives you a list of commands."
-help_msg1 += "\nstphnad!ping\n+ Pings the bot. Used to check if the bot is lagging."
-help_msg1 += "\nstphnad!support <message>\n+ Sends a message to the bot's staff. Use this if you need any help or have questions."
-help_msg1 += "\nstphnad!info\n+ Shows information about the bot."
-help_msg1 += "\nstphnad!rnd\n+ Gives you a random server."
-help_msg1 += "\nstphnad!serverinfo [server id]\n+ Shows information about a server."
-help_msg1 += "\nstphnad!invite\n+ Gives you the invite link for the bot."
-help_msg1 += "\nstphnad!tos\n+ Gives you bot's rules and TOS."
-help_msg1 += "\nstphnad!suggest <suggestion>\n+ Sends a suggestion to the bot moderators."
-help_msg1 += "\nstphnad!uptime\n+ Shows you how long the bot's been online for."
-help_msg1 += "\nstphnad!report <user/server> <id> <reason>\n+ Reports a server or user to the bot moderators."
-help_msg1 += "\nstphnad!bug <message>\n+ Reports a bug to the bot moderators."
-help_msg1 += "\nstphnad!bump\n+ Forces the bot to advertise the server which the command is run in. This can only be used once every day."
+help_msg1 += "\nad!help\n+ Gives you a list of commands."
+help_msg1 += "\nad!ping\n+ Pings the bot. Used to check if the bot is lagging."
+help_msg1 += "\nad!support <message>\n+ Sends a message to the bot's staff. Use this if you need any help or have questions."
+help_msg1 += "\nad!info\n+ Shows information about the bot."
+help_msg1 += "\nad!rnd\n+ Gives you a random server."
+help_msg1 += "\nad!serverinfo [server id]\n+ Shows information about a server."
+help_msg1 += "\nad!invite\n+ Gives you the invite link for the bot."
+help_msg1 += "\nad!tos\n+ Gives you bot's rules and TOS."
+help_msg1 += "\nad!suggest <suggestion>\n+ Sends a suggestion to the bot moderators."
+help_msg1 += "\nad!uptime\n+ Shows you how long the bot's been online for."
+help_msg1 += "\nad!report <user/server> <id> <reason>\n+ Reports a server or user to the bot moderators."
+help_msg1 += "\nad!bug <message>\n+ Reports a bug to the bot moderators."
+help_msg1 += "\nad!bump\n+ Forces the bot to advertise the server which the command is run in. This can only be used once every day."
 help_msg1 += "\n```"
 
 help_msg2 = "```diff"
 help_msg2 += "\n- COMMANDS FOR SERVER MANAGERS -"
-help_msg2 += "\nstphnad!setup [log channel] [channel] [message]\n+ Shows you help on how to setup your server or starts the setup if you add the arguments."
-help_msg2 += "\nstphnad!unsetup\n+ Removes your server from all lists and deletes all data required to advertise your server."
-help_msg2 += "\nstphnad!test\n+ Checks if your server is setup correctly."
-help_msg2 += "\nstphnad!scan\n+ Bans users who are on the black list. Those users are most likely banned for harming servers or breaking the discord TOS."
-help_msg2 += "\nstphnad!toggle\n+ Toggles advertise mode on or off for your server."
+help_msg2 += "\nad!setup [log channel] [channel] [message]\n+ Shows you help on how to setup your server or starts the setup if you add the arguments."
+help_msg2 += "\nad!unsetup\n+ Removes your server from all lists and deletes all data required to advertise your server."
+help_msg2 += "\nad!test\n+ Checks if your server is setup correctly."
+help_msg2 += "\nad!scan\n+ Bans users who are on the black list. Those users are most likely banned for harming servers or breaking the discord TOS."
+help_msg2 += "\nad!toggle\n+ Toggles advertise mode on or off for your server."
 help_msg2 += "\n```"
 
 help_msg3 = "```diff"
 help_msg3 += "\n- COMMANDS FOR BOT MODERATORS -"
-help_msg3 += "\nstphnad!msg <user/server> <id> <message>\n+ DMs an user or the owner of the specified server."
-help_msg3 += "\nstphnad!ban <user/server> <id> <reason>\n+ Bans an user from all servers or prevents a server from using the bot."
-help_msg3 += "\nstphnad!unban <user/server> <id>\n+ Unbans an user from all servers or gives access to a server that was banned."
-help_msg3 += "\nstphnad!reset <server id>\n+ Removes a server from all lists."
+help_msg3 += "\nad!msg <user/server> <id> <message>\n+ DMs an user or the owner of the specified server."
+help_msg3 += "\nad!ban <user/server> <id> <reason>\n+ Bans an user from all servers or prevents a server from using the bot."
+help_msg3 += "\nad!unban <user/server> <id>\n+ Unbans an user from all servers or gives access to a server that was banned."
+help_msg3 += "\nad!reset <server id>\n+ Removes a server from all lists."
 help_msg3 += "\n```"
 
 help_msg4 = "```diff"
 help_msg4 += "\n- COMMANDS FOR BOT ADMINISTRATORS -"
-help_msg4 += "\nstphnad!mod <add/del> <user>\n+ Adds or removes a bot moderator."
-help_msg4 += "\nstphnad!fbump <server id>\n+ Forces the bot to advertise the server with the matching ID as the one specified."
-help_msg4 += "\nstphnad!announce <text>\n+ Sends an announcement to all servers."
-help_msg4 += "\nstphnad!force\n+ Forces the bot to advertise."
-help_msg4 += "\nstphnad!log <message>\n+ Logs a message."
-help_msg4 += "\nstphnad!special <add/del> <server id>\n+ Adds or removes a server from the special list."
-help_msg4 += "\nstphnad!say <text>\n+ Forces the bot to say something."
+help_msg4 += "\nad!mod <add/del> <user>\n+ Adds or removes a bot moderator."
+help_msg4 += "\nad!fbump <server id>\n+ Forces the bot to advertise the server with the matching ID as the one specified."
+help_msg4 += "\nad!announce <text>\n+ Sends an announcement to all servers."
+help_msg4 += "\nad!force\n+ Forces the bot to advertise."
+help_msg4 += "\nad!log <message>\n+ Logs a message."
+help_msg4 += "\nad!special <add/del> <server id>\n+ Adds or removes a server from the special list."
+help_msg4 += "\nad!say <text>\n+ Forces the bot to say something."
 help_msg4 += "\n```"
 
 tos_msg = "**__By using this bot you agree to the following:__**"
@@ -76,7 +76,7 @@ tos_msg += "\n**~~=~~** Do not send stupid suggestions!"
 tos_msg += "\n**~~=~~** Do not false report users, servers and/or bugs!"
 tos_msg += "\n**~~=~~** Breaking any of these rules will get you and/or your server banned!"
 tos_msg += "\n "
-tos_msg += "\n**__You can use `stphnad!help` to see a list of commands!__**"
+tos_msg += "\n**__You can use `ad!help` to see a list of commands!__**"
 
 test_msg_img = "https://i.imgur.com/lv6DwLI.png"
 announcement_img = "https://i.imgur.com/eyjxXIe.png"
@@ -107,7 +107,7 @@ error_img = '<:erroremoji:451339882669801482>'
 x_img = '<:xmark:314349398824058880>'
 check_img = '<:check:314349398811475968>'
 owner_id = '412201413335056386'
-start_status = '- stphnad!help | stphnad!support'
+start_status = '- ad!help | ad!support'
 loading_status = '- Loading...'
 updating_status = '- Updating...'
 support_chnl = '465992768938835970'
@@ -228,7 +228,7 @@ async def on_server_join(server):
     c_chnl = client.get_channel(console_chnl)
     await client.send_message(c_chnl, "```diff\n- JOINED SERVER -\n+ Name: {}\n+ ID: {}\n```".format(server.name, server.id))
     try:
-        await client.send_message(server.owner, "Thank you for adding this bot to your server. Below you can see the TOS and bot rules. For any help you can use: `stphnad!help` and `stphnad!support`. :grin: ")
+        await client.send_message(server.owner, "Thank you for adding this bot to your server. Below you can see the TOS and bot rules. For any help you can use: `ad!help` and `ad!support`. :grin: ")
         await client.send_message(server.owner, tos_msg)
     except:
         print("")
@@ -422,12 +422,12 @@ async def uptime_system():
             ut_minutes.append("+1")
         else:
             ut_seconds.append("+1")
-        await asyncio.sleep(1200)
+        await asyncio.sleep(1)
 
 client.loop.create_task(uptime_system())
 
 ''' COMMANDS FOR EVERYONE '''
-# stphnad!help
+# ad!help
 client.remove_command('help')
 @client.command(pass_context=True)
 async def help(ctx):
@@ -441,7 +441,7 @@ async def help(ctx):
     except:
         await client.say("<:erroremoji:451339882669801482> Make sure the bot has permissions to send you DMs!")
 
-# stphnad!ping
+# ad!ping
 @client.command(pass_context=True)
 async def ping(ctx):
     if ctx.message.server.id in banned_servers:
@@ -463,14 +463,14 @@ async def ping(ctx):
             msg += "\nThe bot isn't lagging! <:online:313956277808005120>"
         await client.say(msg)
 
-# stphnad!support <message>
+# ad!support <message>
 @client.command(pass_context=True)
 async def support(ctx, *, args = None):
     author = ctx.message.author
     server = ctx.message.server
     chnl = client.get_channel(support_chnl)
     if args == None:
-        await client.say("{} No message given!\nExample: `stphnad!support I need help with setting up the bot.`.\nThe message cannot be longer than 1000 characters.".format(error_img))
+        await client.say("{} No message given!\nExample: `ad!support I need help with setting up the bot.`.\nThe message cannot be longer than 1000 characters.".format(error_img))
     else:
         if len(str(args)) > 1000:
             await client.say("{} The message cannot be longer than 1000 characters.".format(error_img))
@@ -491,7 +491,7 @@ async def support(ctx, *, args = None):
             except:
                 await client.say("{} Make sure the bot can send you DMs!".format(error_img))
 
-# stphnad!info
+# ad!info
 @client.command(pass_context=True)
 async def info(ctx):
     if ctx.message.server.id in banned_servers:
@@ -521,7 +521,7 @@ async def info(ctx):
         msg += "\n+ Community server link:\n```\n{}".format(community_server)
         await client.say(msg)
 
-# stphnad!rnd
+# ad!rnd
 @client.command(pass_context=True)
 async def rnd(ctx):
     if ctx.message.server.id in banned_servers:
@@ -531,7 +531,7 @@ async def rnd(ctx):
     else:
         await client.say("**Random server:**\n{}".format(random.choice(servers_links)))
 
-# stphnad!serverinfo [server id]
+# ad!serverinfo [server id]
 @client.command(pass_context=True)
 async def serverinfo(ctx, target = None):
     if ctx.message.server.id in banned_servers:
@@ -613,7 +613,7 @@ async def serverinfo(ctx, target = None):
                 except:
                     await client.say("<:erroremoji:451339882669801482> An unknown error occured while trying to collect the information for that server.")
 
-# stphnad!invite
+# ad!invite
 @client.command(pass_context=True)
 async def invite(ctx):
     if ctx.message.server.id in banned_servers:
@@ -623,12 +623,12 @@ async def invite(ctx):
     else:
         await client.say("Here is the link to invite the bot:\n \nhttps://discordapp.com/oauth2/authorize?client_id=465944263130218507&scope=bot&permissions=8")
 
-# stphnad!tos
+# ad!tos
 @client.command(pass_context=True)
 async def tos(ctx):
     await client.say(tos_msg)
 
-# stphnad!suggest <suggestion>
+# ad!suggest <suggestion>
 @client.command(pass_context=True)
 async def suggest(ctx, *, args = None):
     if ctx.message.server.id in banned_servers:
@@ -659,7 +659,7 @@ async def suggest(ctx, *, args = None):
                 except:
                     await client.say("{} Error in sending suggestion.".format(error_img))
 
-# stphnad!uptime
+# ad!uptime
 @client.command(pass_context=True)
 async def uptime(ctx):
     if ctx.message.server.id in banned_servers:
@@ -684,7 +684,7 @@ async def uptime(ctx):
         msg += "\n```"
         await client.say(msg)
 
-# stphnad!report <user/server> <id> <reason>
+# ad!report <user/server> <id> <reason>
 @client.command(pass_context=True)
 async def report(ctx, option = None, target = None, *, reason = None):
     if ctx.message.server.id in banned_servers:
@@ -695,11 +695,11 @@ async def report(ctx, option = None, target = None, *, reason = None):
         author = ctx.message.author
         server = ctx.message.server
         if option == None:
-            await client.say("{} Command was used wrongly.\n`stphnad!report user <id> <reason>`.\n`stphnad!report server <id> <reason>`.".format(error_img))
+            await client.say("{} Command was used wrongly.\n`ad!report user <id> <reason>`.\n`ad!report server <id> <reason>`.".format(error_img))
         else:
             if option == "user" or option == "server":
                 if target == None or reason == None:
-                    await client.say("{} Command was used wrongly.\n`stphnad!report user <id> <reason>`.\n`stphnad!report server <id> <reason>`.".format(error_img))
+                    await client.say("{} Command was used wrongly.\n`ad!report user <id> <reason>`.\n`ad!report server <id> <reason>`.".format(error_img))
                 else:
                     if len(str(reason)) > 1000:
                             await client.say("{} The reason cannot be longer than 1000 characters.".format(error_img))
@@ -743,11 +743,11 @@ async def report(ctx, option = None, target = None, *, reason = None):
                             except:
                                 await client.say("{} Error in sending report.".format(error_img))
                         else:
-                            await client.say("{} Command was used wrongly.\n`stphnad!report user <id> <reason>`.\n`stphnad!report server <id> <reason>`.".format(error_img))
+                            await client.say("{} Command was used wrongly.\n`ad!report user <id> <reason>`.\n`ad!report server <id> <reason>`.".format(error_img))
             else:
-                await client.say("{} Command was used wrongly.\n`stphnad!report user <id> <reason>`.\n`stphnad!report server <id> <reason>`.".format(error_img))
+                await client.say("{} Command was used wrongly.\n`ad!report user <id> <reason>`.\n`ad!report server <id> <reason>`.".format(error_img))
 
-# stphnad!bug <message>
+# ad!bug <message>
 @client.command(pass_context=True)
 async def bug(ctx, *, args = None):
     if ctx.message.server.id in banned_servers:
@@ -756,7 +756,7 @@ async def bug(ctx, *, args = None):
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
         if args == None:
-            await client.say("{} No message given.\n`stphnad!bug <message>`.".format(error_img))
+            await client.say("{} No message given.\n`ad!bug <message>`.".format(error_img))
         else:
             if len(str(args)) > 1000:
                 await client.say("{} The message cannot be longer than 1000 characters.".format(error_img))
@@ -778,7 +778,7 @@ async def bug(ctx, *, args = None):
                 except:
                     await client.say("{} Error in reporting the bug!".format(error_img))
 
-# stphnad!bump
+# ad!bump
 @client.command(pass_context=True)
 async def bump(ctx):
     if ctx.message.server.id in banned_servers:
@@ -786,7 +786,7 @@ async def bump(ctx):
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     elif ctx.message.server.id in bumped_servers:
-        await client.say("{} This server is already bumped. Please try again after the bot restarts (`stphnad!uptime`).".format(error_img))
+        await client.say("{} This server is already bumped. Please try again after the bot restarts (`ad!uptime`).".format(error_img))
     else:
         server = ctx.message.server
         author = ctx.message.author
@@ -819,7 +819,7 @@ async def bump(ctx):
                 bumped_servers.append(server.id)
                 await client.say("{} The server has been bumped on {}/{} servers!".format(check_img, len(sent), len(found)))
             except:
-                await client.say("{} Error in bumping the server!\nFor any help use `stphnad!support`.".format(error_img))
+                await client.say("{} Error in bumping the server!\nFor any help use `ad!support`.".format(error_img))
         elif server.id in special_servers:
             await client.say("Bumping... <a:typing:393848431413559296>")
             try:
@@ -850,12 +850,12 @@ async def bump(ctx):
                 bumped_servers.append(server.id)
                 await client.say("{} The server has been bumped on {}/{} servers!".format(check_img, len(sent), len(found)))
             except:
-                await client.say("{} Error in bumping the server!\nFor any help use `stphnad!support`.".format(error_img))
+                await client.say("{} Error in bumping the server!\nFor any help use `ad!support`.".format(error_img))
         else:
-            await client.say("{} This server is not being advertised. Use `stphnad!setup` to set it up.".format(error_img))
+            await client.say("{} This server is not being advertised. Use `ad!setup` to set it up.".format(error_img))
 
 ''' COMMANDS FOR SERVER MANAGERS '''
-# stphnad!setup [log channel] [channel] [message]
+# ad!setup [log channel] [channel] [message]
 @client.command(pass_context=True)
 async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Channel = None, *, message = None):
     if ctx.message.server.id in banned_servers:
@@ -869,17 +869,17 @@ async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Chann
             if channel == None or message == None or log_channel == None:
                 a = "```diff"
                 a += "\n- SETUP GUIDE -"
-                a += "\n+ Command: stphnad!setup <log channel> <ad channel> <message>"
+                a += "\n+ Command: ad!setup <log channel> <ad channel> <message>"
                 a += "\n"
                 a += "\n+ Make sure the bot has the following permissions: Manage Server, Manage Channels, Kick Members, Ban Members, Create Instant Invite, Manage Webhooks, Read Messages, Send Messages, Manage Messages, Embed Links, Attach Files, Read Message History, Add Reactions, Use External Emojis."
                 a += "\n "
-                a += "\n+ The bot should already have these permissions if you use the official invite link (stphnad!invite)."
+                a += "\n+ The bot should already have these permissions if you use the official invite link (ad!invite)."
                 a += "\n "
                 a += "\n+ Create 2 channels for the bot. One where the bot will send advertisements and another one where the bot logs stuff. You can also use already existing channels, but its recommended to create a separate channel for the bot to log stuff in."
                 a += "\n "
                 a += "\n+ If you are using a bot to log stuff, make an exception for this bot so it doesn't spam your logs."
                 a += "\n "
-                a += "\n+ Use stphnad!setup [log channel] [channel] [message]."
+                a += "\n+ Use ad!setup [log channel] [channel] [message]."
                 a += "\n "
                 a += "\n+ log channel - The channel where the bot will send logs, announcements etc."
                 a += "\n "
@@ -887,15 +887,15 @@ async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Chann
                 a += "\n "
                 a += "\n+ message - The message you want the bot to use when advertising your server. The message cannot be longer than 500 characters."
                 a += "\n "
-                a += "\n+ Once the bot is done setting up, use stphnad!test to check if everything is working correctly."
+                a += "\n+ Once the bot is done setting up, use ad!test to check if everything is working correctly."
                 a += "\n "
-                a += "\n+ Remember the read the bot's rules and TOS (stphnad!tos)."
+                a += "\n+ Remember the read the bot's rules and TOS (ad!tos)."
                 a += "\n "
-                a += "\n+ If you have any issues with the bot just join the support server and ask for help (stphnad!support)."
+                a += "\n+ If you have any issues with the bot just join the support server and ask for help (ad!support)."
                 a += "\n```"
                 await client.say(a)
             elif server.id in normal_servers or server.id in special_servers:
-                await client.say("{} This server is already being advertised.\nYou can use `stphnad!unsetup` to un-set it up.".format(error_img))
+                await client.say("{} This server is already being advertised.\nYou can use `ad!unsetup` to un-set it up.".format(error_img))
             else:
                 if len(str(message)) > 500:
                     await client.say("{} The message cannot be longer than 500 characters.".format(error_img))
@@ -1002,21 +1002,21 @@ async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Chann
                         log += "\n--- CLOSING SETUP LOGGER ---"
                         log += "\n```"
                         await client.send_message(log_chnl, log)
-                        await client.say("{} Everything should be working now and your server should be advertised.\nYou can use `stphnad!test` to check if everything is working and you can use `stphnad!bump` to force the bot to advertise your server.\nThe setup log has been sent to <#{}>.\nIf you have any questions or need any help, just use `stphnad!support`.\nThank you for using this bot! :grinning: ".format(check_img, log_chnl_id))
+                        await client.say("{} Everything should be working now and your server should be advertised.\nYou can use `ad!test` to check if everything is working and you can use `ad!bump` to force the bot to advertise your server.\nThe setup log has been sent to <#{}>.\nIf you have any questions or need any help, just use `ad!support`.\nThank you for using this bot! :grinning: ".format(check_img, log_chnl_id))
                     except:
                         log += "\n- ^ Error!"
                         log += "\n--- CLOSING SETUP LOGGER ---"
                         log += "\n```"
                         try:
                             await client.send_message(log_chnl, log)
-                            await client.say("{} Looks like an error occured!\nThe setup log has been sent to <#{}>.\nMake sure the bot has the required permissions.\nYou can use `stphnad!unsetup` and try again.\nIf you need any help, just use `stphnad!support`.".format(error_img, log_chnl_id))
+                            await client.say("{} Looks like an error occured!\nThe setup log has been sent to <#{}>.\nMake sure the bot has the required permissions.\nYou can use `ad!unsetup` and try again.\nIf you need any help, just use `ad!support`.".format(error_img, log_chnl_id))
                         except:
                             await client.say(log)
-                            await client.say("{} Looks like an error occured!\nMake sure the bot has the required permissions.\nYou can use `stphnad!unsetup` and try again.\nIf you need any help, just use `stphnad!support`.".format(error_img))
+                            await client.say("{} Looks like an error occured!\nMake sure the bot has the required permissions.\nYou can use `ad!unsetup` and try again.\nIf you need any help, just use `ad!support`.".format(error_img))
         else:
             await client.say("{} This command can only be used by users with the `Manage Server` permissions and can be bypassed by the bot's staff.".format(error_img))
 
-# stphnad!unsetup
+# ad!unsetup
 @client.command(pass_context=True)
 async def unsetup(ctx):
     author = ctx.message.author
@@ -1217,7 +1217,7 @@ async def unsetup(ctx):
                 log += "\n--- CLOSING UN-SETUP LOGGER ---"
                 log += "\n```"
                 await client.say(log)
-                await client.say("{} Everything should be done now.\nYou can setup the server again with `stphnad!setup`.".format(check_img))
+                await client.say("{} Everything should be done now.\nYou can setup the server again with `ad!setup`.".format(check_img))
                 print("[UNSETUP] FINISHED!!!!")
             except:
                 print("[UNSETUP] ERROR!!!!")
@@ -1225,14 +1225,14 @@ async def unsetup(ctx):
                 log += "\n--- CLOSING UN-SETUP LOGGER ---"
                 log += "\n```"
                 await client.say(log)
-                await client.say("{} Looks like there has been an error!\nMake sure the bot has the required permissions and try again.\nIf you need any help you can use `stphnad!support`.".format(error_img))
+                await client.say("{} Looks like there has been an error!\nMake sure the bot has the required permissions and try again.\nIf you need any help you can use `ad!support`.".format(error_img))
                 print("[UNSETUP] ERROR!!!!")
         else:
-            await client.say("{} The server is not setup!\nYou can set it up with `stphnad!setup`.\nIf you need any help you can use `stphnad!support`.".format(error_img))
+            await client.say("{} The server is not setup!\nYou can set it up with `ad!setup`.\nIf you need any help you can use `ad!support`.".format(error_img))
     else:
         await client.say("{} This command can only be used by users with the `Manage Server` permissions and can be bypassed by the bot's staff.".format(error_img))
 
-# stphnad!test
+# ad!test
 @client.command(pass_context=True)
 async def test(ctx):
     author = ctx.message.author
@@ -1359,7 +1359,7 @@ async def test(ctx):
                 log += "\n--- CLOSING SETUP LOGGER ---"
                 log += "\n```"
                 await client.send_message(log_chnl, log)
-                await client.say("{} Everything should be working like it should!\nIf you have any problems you can use `stphnad!support`.\nThe test log has been sent to <#{}>.".format(check_img, log_chnl.id))
+                await client.say("{} Everything should be working like it should!\nIf you have any problems you can use `ad!support`.\nThe test log has been sent to <#{}>.".format(check_img, log_chnl.id))
             except:
                 log += "\n- ^ Error!"
                 log += "\n--- CLOSING TEST LOGGER ---"
@@ -1367,10 +1367,10 @@ async def test(ctx):
                 try:
                     chnl = client.get_channel(log_chnls[0])
                     await client.send_message(chnl, log)
-                    await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `stphnad!support`.\nThe test log has been sent to <#{}>.".format(error_img, chnl.id))
+                    await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `ad!support`.\nThe test log has been sent to <#{}>.".format(error_img, chnl.id))
                 except:
                     await client.say(log)
-                    await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `stphnad!support`.".format(error_img))
+                    await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `ad!support`.".format(error_img))
         elif server.id in special_servers:
             await client.say("Testing... <a:typing:393848431413559296>")
             log = "```diff"
@@ -1488,7 +1488,7 @@ async def test(ctx):
                 log += "\n--- CLOSING SETUP LOGGER ---"
                 log += "\n```"
                 await client.send_message(log_chnl, log)
-                await client.say("{} Everything should be working like it should!\nIf you have any problems you can use `stphnad!support`.\nThe test log has been sent to <#{}>.".format(check_img, log_chnl.id))
+                await client.say("{} Everything should be working like it should!\nIf you have any problems you can use `ad!support`.\nThe test log has been sent to <#{}>.".format(check_img, log_chnl.id))
             except:
                 log += "\n- ^ Error!"
                 log += "\n--- CLOSING TEST LOGGER ---"
@@ -1496,16 +1496,16 @@ async def test(ctx):
                 try:
                     chnl = client.get_channel(log_chnls[0])
                     await client.send_message(chnl, log)
-                    await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `stphnad!support`.\nThe test log has been sent to <#{}>.".format(error_img, chnl.id))
+                    await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `ad!support`.\nThe test log has been sent to <#{}>.".format(error_img, chnl.id))
                 except:
                     await client.say(log)
-                    await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `stphnad!support`.".format(error_img))
+                    await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `ad!support`.".format(error_img))
         else:
-            await client.say("{} The server is not setup!\nYou can set it up with `stphnad!setup`.\nIf you need any help you can use `stphnad!support`.".format(error_img))
+            await client.say("{} The server is not setup!\nYou can set it up with `ad!setup`.\nIf you need any help you can use `ad!support`.".format(error_img))
     else:
         await client.say("{} This command can only be used by users with the `Manage Server` permissions and can be bypassed by the bot's staff.".format(error_img))
 
-# stphnad!scan
+# ad!scan
 @client.command(pass_context=True)
 async def scan(ctx):
     author = ctx.message.author
@@ -1547,7 +1547,7 @@ async def scan(ctx):
     else:
         await client.say("{} This command can only be used by users with the `Manage Server` permissions and can be bypassed by the bot's staff.".format(error_img))
 
-# stphnad!toggle
+# ad!toggle
 @client.command(pass_context=True)
 async def toggle(ctx):
     author = ctx.message.author
@@ -1587,7 +1587,7 @@ async def toggle(ctx):
                     except:
                         print("")
             except:
-                await client.say("{} There has been an error in toggling this server!\nFor any help you can use `stphnad!support`.".format(error_img))
+                await client.say("{} There has been an error in toggling this server!\nFor any help you can use `ad!support`.".format(error_img))
         else:
             try:
                 await client.send_message(chnl, server.id)
@@ -1610,19 +1610,19 @@ async def toggle(ctx):
                     except:
                         print("")
             except:
-                await client.say("{} There has been an error in toggling this server!\nFor any help you can use `stphnad!support`.".format(error_img))
+                await client.say("{} There has been an error in toggling this server!\nFor any help you can use `ad!support`.".format(error_img))
     else:
         await client.say("{} This command can only be used by users with the `Manage Server` permissions and can be bypassed by the bot's staff.".format(error_img))
 
 ''' COMMANDS FOR BOT MODERATORS '''
-# stphnad!msg <user/server> <id> <message>
+# ad!msg <user/server> <id> <message>
 @client.command(pass_context=True)
 async def msg(ctx, option = None, target = None, *, args = None):
     author = ctx.message.author
     chnl = client.get_channel(console_chnl)
     if author.id in bot_mods or author.id in bot_admins:
         if option == None or target == None or args == None:
-            await client.say("{} Not all arguments were given!\nExamples:\n`stphnad!msg user 331398432726056961 Hello! How are you?`.\n`stphnad!msg server 440108166789988353 Hello! How are you?`.".format(error_img))
+            await client.say("{} Not all arguments were given!\nExamples:\n`ad!msg user 331398432726056961 Hello! How are you?`.\n`ad!msg server 440108166789988353 Hello! How are you?`.".format(error_img))
         else:
             if option == "user" or option == "server":
                 if len(str(args)) > 1900:
@@ -1689,7 +1689,7 @@ async def msg(ctx, option = None, target = None, *, args = None):
     else:
         await client.say("{} This command can only be used by the bot's staff!".format(error_img))
 
-# stphnad!ban <user/server> <id> <reason>
+# ad!ban <user/server> <id> <reason>
 @client.command(pass_context=True)
 async def ban(ctx, option = None, target = None, *, reason = None):
     author = ctx.message.author
@@ -1698,7 +1698,7 @@ async def ban(ctx, option = None, target = None, *, reason = None):
     chnl2 = client.get_channel(banned_servers_chnl)
     if author.id in bot_mods or author.id in bot_admins:
         if option == None or target == None or reason == None:
-            await client.say("{} Not all arguments were given!\nExamples:\n`stphnad!ban user 412201413335056386 Raiding servers`.\n`stphnad!ban server 452865346081128448 Not following the bot's TOS.`.".format(error_img))
+            await client.say("{} Not all arguments were given!\nExamples:\n`ad!ban user 412201413335056386 Raiding servers`.\n`ad!ban server 452865346081128448 Not following the bot's TOS.`.".format(error_img))
         else:
             if option == "user" or option == "server":
                 if len(str(reason)) > 1900:
@@ -1720,7 +1720,7 @@ async def ban(ctx, option = None, target = None, *, reason = None):
                                         msg += "\n- BAN -"
                                         msg += "\n+ Banned user's ID: {}".format(target)
                                         msg += "\n+ Banned by: {} ### {}".format(author, author.id)
-                                        msg += "\n+ You can use 'stphnad!scan' to ban all the black listed users."
+                                        msg += "\n+ You can use 'ad!scan' to ban all the black listed users."
                                         msg += "\n+ Reason:"
                                         msg += "\n```"
                                         msg += "\n{}".format(reason)
@@ -1787,7 +1787,7 @@ async def ban(ctx, option = None, target = None, *, reason = None):
     else:
         await client.say("{} This command can only be used by the bot's staff!".format(error_img))
 
-# stphnad!unban <user/server> <id>
+# ad!unban <user/server> <id>
 @client.command(pass_context=True)
 async def unban(ctx, option = None, target = None):
     author = ctx.message.author
@@ -1796,7 +1796,7 @@ async def unban(ctx, option = None, target = None):
     cnsl = client.get_channel(console_chnl)
     if author.id in bot_mods or author.id in bot_admins:
         if option == None or target == None:
-            await client.say("{} Not all arguments were given!\nExamples:\n`stphnad!unban user 412201413335056386`.\n`stphnad!unban server 440108166789988353`.".format(error_img))
+            await client.say("{} Not all arguments were given!\nExamples:\n`ad!unban user 412201413335056386`.\n`ad!unban server 440108166789988353`.".format(error_img))
         else:
             if option == "user":
                 await client.say("Unbanning... <a:typing:393848431413559296>")
@@ -1849,7 +1849,7 @@ async def unban(ctx, option = None, target = None):
     else:
         await client.say("{} This command can only be used by the bot's staff!".format(error_img))
 
-# stphnad!reset <server id>
+# ad!reset <server id>
 @client.command(pass_context=True)
 async def reset(ctx, target = None):
     author = ctx.message.author
@@ -2001,7 +2001,7 @@ async def reset(ctx, target = None):
     else:
         await client.say("{} This command can only be used by the bot's staff!".format(error_img))
 
-# stphnad!link <server id>
+# ad!link <server id>
 @client.command(pass_context=True)
 async def link(ctx, target = None):
     author = ctx.message.author
@@ -2032,7 +2032,7 @@ async def link(ctx, target = None):
         await client.say("{} This command can only be used by the bot's staff!".format(error_img))
 
 ''' COMMANDS FOR BOT ADMINISTRATORS '''
-# stphnad!mod <add/del> <user>
+# ad!mod <add/del> <user>
 @client.command(pass_context=True)
 async def mod(ctx, option = None, user: discord.User = None):
     author = ctx.message.author
@@ -2040,7 +2040,7 @@ async def mod(ctx, option = None, user: discord.User = None):
     bm = client.get_channel(bot_mods_chnl)
     if author.id in bot_admins:
         if option == None or user == None:
-            await client.say("{} Not all arguments were given!\nExamples:\n`stphnad!mod add @Bob`.\n`stphnad!mod del @Bob`.".format(error_img))
+            await client.say("{} Not all arguments were given!\nExamples:\n`ad!mod add @Bob`.\n`ad!mod del @Bob`.".format(error_img))
         else:
             if option == "add":
                 if user.id in bot_mods:
@@ -2080,7 +2080,7 @@ async def mod(ctx, option = None, user: discord.User = None):
     else:
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
-# stphnad!fbump <server id>
+# ad!fbump <server id>
 @client.command(pass_context=True)
 async def fbump(ctx, target = None):
     author = ctx.message.author
@@ -2127,7 +2127,7 @@ async def fbump(ctx, target = None):
                             o += "\n```"
                             await client.send_message(cnsl, o)
                         except:
-                            await client.say("{} Error in bumping the server!\nFor any help use `stphnad!support`.".format(error_img))
+                            await client.say("{} Error in bumping the server!\nFor any help use `ad!support`.".format(error_img))
                     elif server.id in special_servers:
                         await client.say("Bumping... <a:typing:393848431413559296>")
                         try:
@@ -2174,14 +2174,14 @@ async def fbump(ctx, target = None):
     else:
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
-# stphnad!announce <text>
+# ad!announce <text>
 @client.command(pass_context=True)
 async def announce(ctx, *, args = None):
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
     if author.id in bot_admins:
         if args == None:
-            await client.say("{} No text given!\nExample: `stphnad!announce New update!`.".format(error_img))
+            await client.say("{} No text given!\nExample: `ad!announce New update!`.".format(error_img))
         elif len(str(args)) > 1900:
             await client.say("{} The text cannot be longer than 1900 characters.".format(error_img))
         else:
@@ -2224,7 +2224,7 @@ async def announce(ctx, *, args = None):
     else:
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
-# stphnad!force
+# ad!force
 @client.command(pass_context=True)
 async def force(ctx):
     author = ctx.message.author
@@ -2325,24 +2325,24 @@ async def force(ctx):
     else:
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
-# stphnad!log <title> | <message>
+# ad!log <title> | <message>
 @client.command(pass_context=True)
 async def log(ctx, *, args = None):
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
     if author.id in bot_admins:
         if args == None:
-            await client.say("{} Not all arguments were given!\nExample: `stphnad!log SMALL UPDATE | The bot just got updated.`.".format(error_img))
+            await client.say("{} Not all arguments were given!\nExample: `ad!log SMALL UPDATE | The bot just got updated.`.".format(error_img))
         elif len(str(args)) > 1500:
             await client.say("{} The arguments cannot be longer than 1500 characters.".format(error_img))
         else:
             try:
                 args.split('|')
             except:
-                await client.say("{} The command was used wrongly!\nExample: `stphnad!log SMALL UPDATE | The bot just got updated.`.".format(error_img))
+                await client.say("{} The command was used wrongly!\nExample: `ad!log SMALL UPDATE | The bot just got updated.`.".format(error_img))
             a = args.split('|')
             if len(a) != 2:
-                await client.say("{} The command was used wrongly!\nExample: `stphnad!log SMALL UPDATE | The bot just got updated.`.".format(error_img))
+                await client.say("{} The command was used wrongly!\nExample: `ad!log SMALL UPDATE | The bot just got updated.`.".format(error_img))
             else:
                 await client.say("Sending logs... <a:typing:393848431413559296>")
                 done = []
@@ -2380,7 +2380,7 @@ async def log(ctx, *, args = None):
     else:
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
-# stphnad!special <add/del> <server id>
+# ad!special <add/del> <server id>
 @client.command(pass_context=True)
 async def special(ctx, option = None, target = None):
     author = ctx.message.author
@@ -2391,7 +2391,7 @@ async def special(ctx, option = None, target = None):
     c2 = client.get_channel(special_servers_msgs_chnl)
     if author.id in bot_admins:
         if option == None or target == None:
-            await client.say("{} Not all arguments were given!\nExamples:\n`stphnad!special add 440108166789988353`.\n`stphnad!special del 440108166789988353`.".format(error_img))
+            await client.say("{} Not all arguments were given!\nExamples:\n`ad!special add 440108166789988353`.\n`ad!special del 440108166789988353`.".format(error_img))
         elif option == "add":
             if target in special_servers:
                 await client.say("{} That server is already in the special list.".format(error_img))
@@ -2563,7 +2563,7 @@ async def special(ctx, option = None, target = None):
     else:
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
-# stphnad!say <text>
+# ad!say <text>
 @client.command(pass_context=True)
 async def say(ctx, *, args = None):
     author = ctx.message.author
