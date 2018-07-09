@@ -1,1 +1,1 @@
-# STPHN-ADVERTISERsjshehesusi
+# discord-Advertising-Bot
