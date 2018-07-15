@@ -15,7 +15,8 @@ bot_prefix= "ad!"
 client = commands.Bot(command_prefix=bot_prefix)
 footer_text = "[+] Get STPHN Advertiser Bot: https://discord.gg/UBh9FpK [+]"
 
-help_msg1 = "```diff"
+help_msg1 = "Community Discord: https://discord.gg/uptrwP5"
+help_msg1 += "```diff""
 help_msg1 += "\n- COMMANDS FOR EVERYONE -"
 help_msg1 += "\nad!help\n+ Gives you a list of commands."
 help_msg1 += "\nad!ping\n+ Pings the bot. Used to check if the bot is lagging."
@@ -2593,4 +2594,5 @@ async def say(ctx, *, args = None):
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
 # TURNS THE BOT ON
-client.run(os.environ['BOT_TOKEN'])
+#client.run(os.environ['BOT_TOKEN'])
+client.run("NDY1OTQ0MjYzMTMwMjE4NTA3.Diz29A.crjdmLSNdGc6igVy-7Mq-UAXkvI")
