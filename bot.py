@@ -13,7 +13,7 @@ import re
 Client = discord.Client()
 bot_prefix= "ad!"
 client = commands.Bot(command_prefix=bot_prefix)
-footer_text = "[+] Get STPHN Advertiser Bot: https://notsetyet.com [+]"
+footer_text = "[+] Get STPHN Advertiser Bot: https://discord.gg/UBh9FpK [+]"
 
 help_msg1 = "```diff"
 help_msg1 += "\n- COMMANDS FOR EVERYONE -"
@@ -245,27 +245,31 @@ async def on_server_remove(server):
         ss = client.get_channel(special_servers_chnl)
         sl = client.get_channel(servers_links_chnl)
         try:
-            invs = await client.invites_from(server)
             o = []
-            for i in invs:
-                if i.url in servers_links:
-                    servers_links.remove(i.url)
-                    o.append(i.url)
+            for i in server_links:
+                a = await client.get_invite(i)
+                s = a.server.id
+                if s == server.id:
+                    servers_links.remove(i)
+                    o.append(i)
+                    print("REMOVED INVITE")
                     break
                 else:
                     print("")
             async for m in client.logs_from(sl):
                 if m.content == o[0]:
                     await client.delete_message(m)
+                    print("REMOVED INVITE 2")
                     break
                 else:
                     print("")
         except:
             print("")
         async for m in client.logs_from(nsm):
-            a = str(m)
+            a = str(m.content)
             if server.id in a:
                 await client.delete_message(m)
+                print("REMOVED MSG")
                 break
             else:
                 print("")
@@ -273,13 +277,15 @@ async def on_server_remove(server):
             a = str(i)
             if server.id in a:
                 normal_servers_msgs.remove(i)
+                print("REMOVED MSG 2")
                 break
             else:
                 print("")
         async for m in client.logs_from(ssm):
-            a = str(m)
+            a = str(m.content)
             if server.id in a:
                 await client.delete_message(m)
+                print("REMOVED SPEC MSG")
                 break
             else:
                 print("")
@@ -287,31 +293,39 @@ async def on_server_remove(server):
             a = str(i)
             if server.id in a:
                 special_servers_msgs.remove(i)
+                print("REMOVED SPEC MSG 2")
                 break
             else:
                 print("")
         async for m in client.logs_from(ns):
-            if m.content == server.id:
+            a = str(m.content)
+            if server.id in a:
                 await client.delete_message(m)
+                print("REMOVED ID")
                 break
             else:
                 print("")
         try:
             normal_servers.remove(server.id)
+            print("REMOVED ID 2")
         except:
             print("")
         async for m in client.logs_from(ss):
-            if m.content == server.id:
+            a = str(m.content)
+            if server.id in a:
                 await client.delete_message(m)
+                print("REMOVED SPEC ID")
                 break
             else:
                 print("")
         try:
             special_servers.remove(server.id)
+            print("REMOVED SPEC ID 2")
         except:
             print("")
     else:
         print("")
+    print("FINISHED")
 
 # AUTO ADVERTISING SYSTEM
 async def autoad():
@@ -621,7 +635,7 @@ async def invite(ctx):
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
-        await client.say("Here is the link to invite the bot:\n \nhttps://discordapp.com/oauth2/authorize?client_id=465944263130218507&scope=bot&permissions=8")
+        await client.say("Here is the link to invite the bot:\n \nHere is the link to invite the bot:\n \nhttps://discordapp.com/oauth2/authorize?client_id=465944263130218507&scope=bot&permissions=8")
 
 # ad!tos
 @client.command(pass_context=True)
@@ -891,7 +905,7 @@ async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Chann
                 a += "\n "
                 a += "\n+ Remember the read the bot's rules and TOS (ad!tos)."
                 a += "\n "
-                a += "\n+ If you have any issues with the bot just join the support server and ask for help (ad!support)."
+                a += "\n+ If you have any issues with the bot just use the ad!support command."
                 a += "\n```"
                 await client.say(a)
             elif server.id in normal_servers or server.id in special_servers:
@@ -2190,12 +2204,12 @@ async def announce(ctx, *, args = None):
             fail = []
             pos = []
             try:
-                embed = discord.Embed(colour=0xFF0000, description= "")
-                embed.title = ""
-                embed.set_image(url="{}".format(announcement_img))
-                embed.set_footer(text=footer_text)
                 for c in log_channels_ids:
                     pos.append("+1")
+                    embed = discord.Embed(colour=0xFF0000, description= "")
+                    embed.title = ""
+                    embed.set_image(url="{}".format(announcement_img))
+                    embed.set_footer(text=footer_text)
                     m = "{}".format(args)
                     m += "\n~~__**= = = = = = = = = = = = = = = = = = = =**__~~"
                     m += "\n:label: Message by: `{} ### {}`".format(author, author.id)
@@ -2579,4 +2593,5 @@ async def say(ctx, *, args = None):
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
 # TURNS THE BOT ON
-client.run(os.environ['BOT_TOKEN'])
+#client.run(os.environ['BOT_TOKEN'])
+client.run("NDY1OTQ0MjYzMTMwMjE4NTA3.DizKrQ.Lw-f9SMVMQ-AiMieUPualp8olhM")
