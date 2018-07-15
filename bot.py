@@ -2593,5 +2593,4 @@ async def say(ctx, *, args = None):
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
 # TURNS THE BOT ON
-#client.run(os.environ['BOT_TOKEN'])
-client.run("NDY1OTQ0MjYzMTMwMjE4NTA3.DizKrQ.Lw-f9SMVMQ-AiMieUPualp8olhM")
+client.run(os.environ['BOT_TOKEN'])
