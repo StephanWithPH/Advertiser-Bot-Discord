@@ -13,9 +13,10 @@ import re
 Client = discord.Client()
 bot_prefix= "ad!"
 client = commands.Bot(command_prefix=bot_prefix)
-footer_text = "[+] Get STPHN Advertiser Bot: https://discord.gg/UBh9FpK [+]"
+footer_text = "[+] Get STPHN Advertiser Bot: https://discord.gg/uptrwP5 [+]"
 
 help_msg1 = "Community Discord: https://discord.gg/uptrwP5"
+help_msg1 += "Help commands:"
 help_msg1 += "```diff"
 help_msg1 += "\n- COMMANDS FOR EVERYONE -"
 help_msg1 += "\nad!help\n+ Gives you a list of commands."
@@ -2594,5 +2595,5 @@ async def say(ctx, *, args = None):
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
 # TURNS THE BOT ON
-#client.run(os.environ['BOT_TOKEN'])
-client.run("NDY1OTQ0MjYzMTMwMjE4NTA3.Diz29A.crjdmLSNdGc6igVy-7Mq-UAXkvI")
+client.run(os.environ['BOT_TOKEN'])
+#client.run("PC-TOKEN")
