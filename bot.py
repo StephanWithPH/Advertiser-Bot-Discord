@@ -15,27 +15,29 @@ bot_prefix= "ad!"
 client = commands.Bot(command_prefix=bot_prefix)
 footer_text = "[+] Get STPHN Advertiser Bot: https://discord.gg/uptrwP5 [+]"
 
-help_msg1 = "Community Discord: https://discord.gg/uptrwP5"
-help_msg1 += "\nHelp commands:"
+help_msg1 = "\nHelp commands:"
 help_msg1 += "```diff"
-help_msg1 += "\n- COMMANDS FOR EVERYONE -"
+help_msg1 += "\nCommunity Discord: https://discord.gg/uptrwP5"
+help_msg1 += "\n- COMMANDS FOR EVERYONE (AND SOME FOR BANNED USERS)-"
+help_msg1 += "\nad!getspecial\n+Shows you a list of ways to get a special msg."
+help_msg1 += "\nad!requestunban\n+Request a server/user unban so u can use the bot again."
 help_msg1 += "\nad!help\n+ Gives you a list of commands."
 help_msg1 += "\nad!ping\n+ Pings the bot. Used to check if the bot is lagging."
 help_msg1 += "\nad!support <message>\n+ Sends a message to the bot's staff. Use this if you need any help or have questions."
-help_msg1 += "\nad!info\n+ Shows information about the bot."
 help_msg1 += "\nad!rnd\n+ Gives you a random server."
+help_msg1 += "\nad!info\n+ Shows information about the bot."
 help_msg1 += "\nad!serverinfo [server id]\n+ Shows information about a server."
 help_msg1 += "\nad!invite\n+ Gives you the invite link for the bot."
 help_msg1 += "\nad!tos\n+ Gives you bot's rules and TOS."
+help_msg1 += "\nad!bug <message>\n+ Reports a bug to the bot moderators."
 help_msg1 += "\nad!suggest <suggestion>\n+ Sends a suggestion to the bot moderators."
 help_msg1 += "\nad!uptime\n+ Shows you how long the bot's been online for."
 help_msg1 += "\nad!report <user/server> <id> <reason>\n+ Reports a server or user to the bot moderators."
-help_msg1 += "\nad!bug <message>\n+ Reports a bug to the bot moderators."
 help_msg1 += "\nad!bump\n+ Forces the bot to advertise the server which the command is run in. This can only be used once every day."
 help_msg1 += "\n```"
 
 help_msg2 = "```diff"
-help_msg2 += "\n- COMMANDS FOR SERVER MANAGERS -"
+help_msg2 += "\n- COMMANDS FOR SERVER ADMINISTRATORS -"
 help_msg2 += "\nad!setup [log channel] [channel] [message]\n+ Shows you help on how to setup your server or starts the setup if you add the arguments."
 help_msg2 += "\nad!unsetup\n+ Removes your server from all lists and deletes all data required to advertise your server."
 help_msg2 += "\nad!test\n+ Checks if your server is setup correctly."
@@ -62,23 +64,24 @@ help_msg4 += "\nad!special <add/del> <server id>\n+ Adds or removes a server fro
 help_msg4 += "\nad!say <text>\n+ Forces the bot to say something."
 help_msg4 += "\n```"
 
-tos_msg = "**__By using this bot you agree to the following:__**"
-tos_msg += "\n**~~=~~** Letting the bot ban and unban users that are known for harming other discord servers and/or breaking the discord TOS!"
+tos_msg = "**__When using my bot you agree to the following:__**"
+tos_msg += "\n**~~=~~** Letting the bot ban and unban users that are harming other discord servers and breaking the any public Discord rules!"
 tos_msg += "\n**~~=~~** Letting the bot create invite linnks for your server!"
-tos_msg += "\n**~~=~~** Letting the bot send advertisements for other discord servers on your server and sending your server links to other servers!"
-tos_msg += "\n**~~=~~** Giving the required permissions to the bot!"
+tos_msg += "\n**~~=~~** Letting the bot exchange invite links between servers and direct messages (DM)!"
+tos_msg += "\n**~~=~~** Giving server admin permissions to the bot! (My bot will not do anything that's against the Discord TOS)."
 tos_msg += "\n**~~=~~** Letting the bot get your server information such as members, server id, channel count, owner id etc!"
 tos_msg += "\n "
 tos_msg += "\n**__Bot rules:__**"
-tos_msg += "\n**~~=~~** Everyone must be able to see the channel that the bot creates!"
-tos_msg += "\n**~~=~~** Spamming bot commands or trying to make the bot lag is not allowed!"
+tos_msg += "\n**~~=~~** *This is to not make my bot useless.*"
+tos_msg += "\n**~~=~~** Make sure everyone can read the channel where the bot advertises!"
 tos_msg += "\n**~~=~~** Asking to become a bot moderator is not allowed!"
-tos_msg += "\n**~~=~~** Only DM the bot administrators or bot moderators if you have any questions or if you need help!"
-tos_msg += "\n**~~=~~** Do not send stupid suggestions!"
+tos_msg += "\n**~~=~~** Only send bot staff a message if you need help!"
+tos_msg += "\n**~~=~~** Don't spam any commands! You might get punished for doing this..."
 tos_msg += "\n**~~=~~** Do not false report users, servers and/or bugs!"
+tos_msg += "\n**~~=~~** Do not copy my bot and/or distribute it as public and on Discord bot lists"
 tos_msg += "\n**~~=~~** Breaking any of these rules will get you and/or your server banned!"
 tos_msg += "\n "
-tos_msg += "\n**__You can use `ad!help` to see a list of commands!__**"
+tos_msg += "\n**__Use ad!help to start your journey!__**"
 
 test_msg_img = "https://i.imgur.com/lv6DwLI.png"
 announcement_img = "https://i.imgur.com/eyjxXIe.png"
@@ -113,6 +116,7 @@ start_status = '- ad!help | ad!support'
 loading_status = '- Loading...'
 updating_status = '- Updating...'
 support_chnl = '465992768938835970'
+requestunban_chnl = '471740301812301825'
 
 servers_links = []
 
@@ -230,7 +234,7 @@ async def on_server_join(server):
     c_chnl = client.get_channel(console_chnl)
     await client.send_message(c_chnl, "```diff\n- JOINED SERVER -\n+ Name: {}\n+ ID: {}\n```".format(server.name, server.id))
     try:
-        await client.send_message(server.owner, "Thank you for adding this bot to your server. Below you can see the TOS and bot rules. For any help you can use: `ad!help` and `ad!support`. :grin: ")
+        await client.send_message(server.owner, "Thank you for adding me! This are the bot rules and TOS. The bot prefix is ad!. Use ad!help for a list of commands and ad!support in a server text channel to ask for support! Have fun :joy:")
         await client.send_message(server.owner, tos_msg)
     except:
         print("")
@@ -453,15 +457,15 @@ async def help(ctx):
         await client.send_message(author, help_msg2)
         await client.send_message(author, help_msg3)
         await client.send_message(author, help_msg4)
-        await client.say("Check your DMs. :slight_smile: ")
+        await client.say("Look at your DMs. :slight_smile: ")
     except:
-        await client.say("<:erroremoji:451339882669801482> Make sure the bot has permissions to send you DMs!")
+        await client.say("<:erroremoji:451339882669801482> Please make sure the bot has permissions to send you direct messages!")
 
 # ad!ping
 @client.command(pass_context=True)
 async def ping(ctx):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and is not allowed to use the bot anymore.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -486,7 +490,7 @@ async def support(ctx, *, args = None):
     server = ctx.message.server
     chnl = client.get_channel(support_chnl)
     if args == None:
-        await client.say("{} No message given!\nExample: `ad!support I need help with setting up the bot.`.\nThe message cannot be longer than 1000 characters.".format(error_img))
+        await client.say("{} No message given!\nExample: `ad!support I don't know how to use the bot.`.\nThe message cannot be longer than 1000 characters.".format(error_img))
     else:
         if len(str(args)) > 1000:
             await client.say("{} The message cannot be longer than 1000 characters.".format(error_img))
@@ -503,7 +507,35 @@ async def support(ctx, *, args = None):
             await client.send_message(chnl, msg)
             await client.say("{} Message sent!".format(check_img))
             try:
-                await client.send_message(author, "{} The support ticket has been sent to the bot's staff. They will reply using this DM once they see the support ticket.".format(check_img))
+                await client.send_message(author, "{} The support ticket has been sent to the bot staff. They will reply using DM or using the text chat in your Discord server.".format(check_img))
+            except:
+                await client.say("{} Make sure the bot can send you DMs!".format(error_img))
+
+# ad!requestunban <message>
+@client.command(pass_context=True)
+async def requestunban(ctx, *, args = None):
+    author = ctx.message.author
+    server = ctx.message.server
+    chnl = client.get_channel(requestunban_chnl)
+    if args == None:
+        await client.say("{} No message given!\nExample: `ad!requestunban Please unban my server/user because...!`.\nInclude a valid reason and what you are requesting, a server or user unban.".format(error_img))
+    else:
+        if len(str(args)) > 1000:
+            await client.say("{} The message cannot be longer than 1000 characters.".format(error_img))
+        else:
+            await client.say("Sending... <a:typing:393848431413559296>")
+            msg = "@everyone "
+            msg += "```diff"
+            msg += "\n- UNBAN REQUEST -"
+            msg += "\n+ Author: {} ### {}".format(author, author.id)
+            msg += "\n+ From: {} ### {}".format(server.name, server.id)
+            msg += "\n+ Message:"
+            msg += "\n```"
+            msg += "\n{}".format(args)
+            await client.send_message(chnl, msg)
+            await client.say("{} Unban request sent!".format(check_img))
+            try:
+                await client.send_message(author, "{} The unban request has been sent to the bot staff. They will reply using DM or using the text chat in your Discord server.".format(check_img))
             except:
                 await client.say("{} Make sure the bot can send you DMs!".format(error_img))
 
@@ -511,7 +543,7 @@ async def support(ctx, *, args = None):
 @client.command(pass_context=True)
 async def info(ctx):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -541,7 +573,7 @@ async def info(ctx):
 @client.command(pass_context=True)
 async def rnd(ctx):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -551,7 +583,7 @@ async def rnd(ctx):
 @client.command(pass_context=True)
 async def serverinfo(ctx, target = None):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -633,11 +665,21 @@ async def serverinfo(ctx, target = None):
 @client.command(pass_context=True)
 async def invite(ctx):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
         await client.say("Here is the link to invite the bot:\n \nHere is the link to invite the bot:\n \nhttps://discordapp.com/oauth2/authorize?client_id=465944263130218507&scope=bot&permissions=8")
+
+# ad!getspecial
+@client.command(pass_context=True)
+async def getspecial(ctx):
+    if ctx.message.server.id in banned_servers:
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
+    elif ctx.message.author.id in banned_users:
+        await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
+    else:
+        await client.say("You can do the following to get your server a special msg:\n \nBy mining crypto currency online: https://comingsoon.com \nBy donating a certain amount of money: https://comingsoon.com")
 
 # ad!tos
 @client.command(pass_context=True)
@@ -648,7 +690,7 @@ async def tos(ctx):
 @client.command(pass_context=True)
 async def suggest(ctx, *, args = None):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -679,7 +721,7 @@ async def suggest(ctx, *, args = None):
 @client.command(pass_context=True)
 async def uptime(ctx):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -704,7 +746,7 @@ async def uptime(ctx):
 @client.command(pass_context=True)
 async def report(ctx, option = None, target = None, *, reason = None):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -767,7 +809,7 @@ async def report(ctx, option = None, target = None, *, reason = None):
 @client.command(pass_context=True)
 async def bug(ctx, *, args = None):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -798,7 +840,7 @@ async def bug(ctx, *, args = None):
 @client.command(pass_context=True)
 async def bump(ctx):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     elif ctx.message.server.id in bumped_servers:
@@ -875,7 +917,7 @@ async def bump(ctx):
 @client.command(pass_context=True)
 async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Channel = None, *, message = None):
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     else:
@@ -1038,7 +1080,7 @@ async def unsetup(ctx):
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
@@ -1254,7 +1296,7 @@ async def test(ctx):
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
@@ -1527,7 +1569,7 @@ async def scan(ctx):
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
@@ -1570,7 +1612,7 @@ async def toggle(ctx):
     server = ctx.message.server
     chnl = client.get_channel(toggled_servers_chnl)
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
