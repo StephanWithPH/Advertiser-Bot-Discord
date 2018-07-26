@@ -465,6 +465,7 @@ async def help(ctx):
 # ad!ping
 @client.command(pass_context=True)
 async def ping(ctx):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and is not allowed to use the bot anymore.")
     elif ctx.message.author.id in banned_users:
@@ -487,6 +488,7 @@ async def ping(ctx):
 # ad!support <message>
 @client.command(pass_context=True)
 async def support(ctx, *, args = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     server = ctx.message.server
     chnl = client.get_channel(support_chnl)
@@ -515,6 +517,7 @@ async def support(ctx, *, args = None):
 # ad!requestunban <message>
 @client.command(pass_context=True)
 async def requestunban(ctx, *, args = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     server = ctx.message.server
     chnl = client.get_channel(requestunban_chnl)
@@ -543,6 +546,7 @@ async def requestunban(ctx, *, args = None):
 # ad!info
 @client.command(pass_context=True)
 async def info(ctx):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -573,6 +577,7 @@ async def info(ctx):
 # ad!rnd
 @client.command(pass_context=True)
 async def rnd(ctx):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -583,6 +588,7 @@ async def rnd(ctx):
 # ad!serverinfo [server id]
 @client.command(pass_context=True)
 async def serverinfo(ctx, target = None):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -665,6 +671,7 @@ async def serverinfo(ctx, target = None):
 # ad!invite
 @client.command(pass_context=True)
 async def invite(ctx):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -675,6 +682,7 @@ async def invite(ctx):
 # ad!getspecial
 @client.command(pass_context=True)
 async def getspecial(ctx):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -685,11 +693,13 @@ async def getspecial(ctx):
 # ad!tos
 @client.command(pass_context=True)
 async def tos(ctx):
+    if ctx.message.author.bot: return
     await client.say(tos_msg)
 
 # ad!suggest <suggestion>
 @client.command(pass_context=True)
 async def suggest(ctx, *, args = None):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -721,6 +731,7 @@ async def suggest(ctx, *, args = None):
 # ad!uptime
 @client.command(pass_context=True)
 async def uptime(ctx):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -746,6 +757,7 @@ async def uptime(ctx):
 # ad!report <user/server> <id> <reason>
 @client.command(pass_context=True)
 async def report(ctx, option = None, target = None, *, reason = None):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -809,6 +821,7 @@ async def report(ctx, option = None, target = None, *, reason = None):
 # ad!bug <message>
 @client.command(pass_context=True)
 async def bug(ctx, *, args = None):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -840,6 +853,7 @@ async def bug(ctx, *, args = None):
 # ad!bump
 @client.command(pass_context=True)
 async def bump(ctx):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -917,6 +931,7 @@ async def bump(ctx):
 # ad!setup [log channel] [channel] [message]
 @client.command(pass_context=True)
 async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Channel = None, *, message = None):
+    if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
         await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
@@ -1078,6 +1093,7 @@ async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Chann
 # ad!unsetup
 @client.command(pass_context=True)
 async def unsetup(ctx):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
@@ -1294,6 +1310,7 @@ async def unsetup(ctx):
 # ad!test
 @client.command(pass_context=True)
 async def test(ctx):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
@@ -1567,6 +1584,7 @@ async def test(ctx):
 # ad!scan
 @client.command(pass_context=True)
 async def scan(ctx):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
@@ -1609,6 +1627,7 @@ async def scan(ctx):
 # ad!toggle
 @client.command(pass_context=True)
 async def toggle(ctx):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     server = ctx.message.server
     chnl = client.get_channel(toggled_servers_chnl)
@@ -1677,6 +1696,7 @@ async def toggle(ctx):
 # ad!msg <user/server> <id> <message>
 @client.command(pass_context=True)
 async def msg(ctx, option = None, target = None, *, args = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     chnl = client.get_channel(console_chnl)
     if author.id in bot_mods or author.id in bot_admins:
@@ -1751,6 +1771,7 @@ async def msg(ctx, option = None, target = None, *, args = None):
 # ad!ban <user/server> <id> <reason>
 @client.command(pass_context=True)
 async def ban(ctx, option = None, target = None, *, reason = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
     chnl = client.get_channel(banned_users_chnl)
@@ -1849,6 +1870,7 @@ async def ban(ctx, option = None, target = None, *, reason = None):
 # ad!unban <user/server> <id>
 @client.command(pass_context=True)
 async def unban(ctx, option = None, target = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     chnl = client.get_channel(banned_users_chnl)
     chnl2 = client.get_channel(banned_servers_chnl)
@@ -1911,6 +1933,7 @@ async def unban(ctx, option = None, target = None):
 # ad!reset <server id>
 @client.command(pass_context=True)
 async def reset(ctx, target = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     if author.id in bot_mods or author.id in bot_admins:
         if target == None:
@@ -2063,6 +2086,7 @@ async def reset(ctx, target = None):
 # ad!link <server id>
 @client.command(pass_context=True)
 async def link(ctx, target = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     if author.id in bot_mods or author.id in bot_admins:
         if target == None:
@@ -2094,6 +2118,7 @@ async def link(ctx, target = None):
 # ad!mod <add/del> <user>
 @client.command(pass_context=True)
 async def mod(ctx, option = None, user: discord.User = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
     bm = client.get_channel(bot_mods_chnl)
@@ -2142,6 +2167,7 @@ async def mod(ctx, option = None, user: discord.User = None):
 # ad!fbump <server id>
 @client.command(pass_context=True)
 async def fbump(ctx, target = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
     if author.id in bot_admins:
@@ -2236,6 +2262,7 @@ async def fbump(ctx, target = None):
 # ad!announce <text>
 @client.command(pass_context=True)
 async def announce(ctx, *, args = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
     if author.id in bot_admins:
@@ -2286,6 +2313,7 @@ async def announce(ctx, *, args = None):
 # ad!force
 @client.command(pass_context=True)
 async def force(ctx):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     if author.id in bot_admins:
         await client.say("Forcing advertisements... <a:typing:393848431413559296>")
@@ -2387,6 +2415,7 @@ async def force(ctx):
 # ad!log <title> | <message>
 @client.command(pass_context=True)
 async def log(ctx, *, args = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
     if author.id in bot_admins:
@@ -2442,6 +2471,7 @@ async def log(ctx, *, args = None):
 # ad!special <add/del> <server id>
 @client.command(pass_context=True)
 async def special(ctx, option = None, target = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
     chnl1 = client.get_channel(normal_servers_chnl)
@@ -2625,6 +2655,7 @@ async def special(ctx, option = None, target = None):
 # ad!say <text>
 @client.command(pass_context=True)
 async def say(ctx, *, args = None):
+    if ctx.message.author.bot: return
     author = ctx.message.author
     if author.id in bot_admins:
         if args == None:
