@@ -452,7 +452,7 @@ client.remove_command('help')
 @client.command(pass_context=True)
 async def help(ctx):
     author = ctx.message.author
-	if message.author.bot: return
+    if message.author.bot: return
     try:
         await client.send_message(author, help_msg1)
         await client.send_message(author, help_msg2)
