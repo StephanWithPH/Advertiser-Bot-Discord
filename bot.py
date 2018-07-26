@@ -451,8 +451,8 @@ client.loop.create_task(uptime_system())
 client.remove_command('help')
 @client.command(pass_context=True)
 async def help(ctx):
+    if ctx.message.author.bot: return
     author = ctx.message.author
-    if command.author.bot: return
     try:
         await client.send_message(author, help_msg1)
         await client.send_message(author, help_msg2)
