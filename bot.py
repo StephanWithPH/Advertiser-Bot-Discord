@@ -855,7 +855,7 @@ async def bug(ctx, *, args = None):
 async def bump(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:xmark:314349398824058880> This server is on the ban list and cannot use the bot.")
+        await client.say("<:xmark:314349398824058880> This server is in the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
         await client.say("<:xmark:314349398824058880> You are on the blacklist and cannot use the bot.")
     elif ctx.message.server.id in bumped_servers:
@@ -866,6 +866,7 @@ async def bump(ctx):
         if server.id in normal_servers:
             await client.say("Bumping... <a:typing:393848431413559296>")
             try:
+                bumped_servers.append(server.id)
                 msgs = []
                 found = []
                 sent = []
@@ -889,13 +890,17 @@ async def bump(ctx):
                         sent.append("+1")
                     except:
                         print("")
-                bumped_servers.append(server.id)
                 await client.say("{} The server has been bumped on {}/{} servers!".format(check_img, len(sent), len(found)))
             except:
+                try:
+                    bumped_servers.remove(server.id)
+                except:
+                    print("")
                 await client.say("{} Error in bumping the server!\nFor any help use `ad!support`.".format(error_img))
         elif server.id in special_servers:
             await client.say("Bumping... <a:typing:393848431413559296>")
             try:
+                bumped_servers.append(server.id)
                 msgs = []
                 found = []
                 sent = []
@@ -920,9 +925,12 @@ async def bump(ctx):
                         sent.append("+1")
                     except:
                         print("")
-                bumped_servers.append(server.id)
                 await client.say("{} The server has been bumped on {}/{} servers!".format(check_img, len(sent), len(found)))
             except:
+                try:
+                    bumped_servers.remove(server.id)
+                except:
+                    print("")
                 await client.say("{} Error in bumping the server!\nFor any help use `ad!support`.".format(error_img))
         else:
             await client.say("{} This server is not being advertised. Use `ad!setup` to set it up.".format(error_img))
