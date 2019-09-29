@@ -467,9 +467,9 @@ async def help(ctx):
 async def ping(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and is not allowed to use the bot anymore.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and is not allowed to use the bot anymore.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         channel = ctx.message.channel
         t1 = time.perf_counter()
@@ -478,11 +478,11 @@ async def ping(ctx):
         ping = round((t2-t1)*1000)
         msg = "My ping is: `{}ms`".format(ping)
         if ping > 300:
-            msg += "\nThe bot is lagging! <:customDnd:472463211975933971>"
+            msg += "\nThe bot is lagging! <:customDnd:627870778372653086>"
         elif ping > 200:
-            msg += "\nThe bot might be lagging! <:customAway:472463555740958760>"
+            msg += "\nThe bot might be lagging! <:customAway:627871140311859230>"
         else:
-            msg += "\nThe bot isn't lagging! <:customOnline:472463539022594058>"
+            msg += "\nThe bot isn't lagging! <:customOnline:627871367143882773>"
         await client.say(msg)
 
 # ad!support <message>
@@ -548,9 +548,9 @@ async def requestunban(ctx, *, args = None):
 async def info(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         big = []
         await client.say("Collecting information... <a:updating:403035325242540032>")
@@ -579,9 +579,9 @@ async def info(ctx):
 async def rnd(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         await client.say("**Random server:**\n{}".format(random.choice(servers_links)))
 
@@ -590,9 +590,9 @@ async def rnd(ctx):
 async def serverinfo(ctx, target = None):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         if target == None:
             await client.say("Collecting information... <a:updating:403035325242540032>")
@@ -673,9 +673,9 @@ async def serverinfo(ctx, target = None):
 async def invite(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         await client.say("Here is the link to invite the bot:\n \nhttps://discordapp.com/api/oauth2/authorize?client_id=627857176362483731&permissions=8&scope=bot")
 
@@ -684,9 +684,9 @@ async def invite(ctx):
 async def getspecial(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         await client.say("You can do the following to get your server a special msg:\n \nBy donating a certain amount of money: SOON")
 
@@ -701,9 +701,9 @@ async def tos(ctx):
 async def suggest(ctx, *, args = None):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         author = ctx.message.author
         server = ctx.message.server
@@ -724,7 +724,7 @@ async def suggest(ctx, *, args = None):
                     msg += "\n```"
                     msg += "\n{}".format(args)
                     await client.send_message(chnl, msg)
-                    await client.say("<:customCheck:472461756829007872> Suggestion sent!")
+                    await client.say("<:customCheck:627861601038368788> Suggestion sent!")
                 except:
                     await client.say("{} Error in sending suggestion.".format(error_img))
 
@@ -733,9 +733,9 @@ async def suggest(ctx, *, args = None):
 async def uptime(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         nr_hours = 23 - len(ut_hours)
         nr_minutes = 59 - len(ut_minutes)
@@ -759,9 +759,9 @@ async def uptime(ctx):
 async def report(ctx, option = None, target = None, *, reason = None):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         author = ctx.message.author
         server = ctx.message.server
@@ -823,9 +823,9 @@ async def report(ctx, option = None, target = None, *, reason = None):
 async def bug(ctx, *, args = None):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         if args == None:
             await client.say("{} No message given.\n`ad!bug <message>`.".format(error_img))
@@ -855,9 +855,9 @@ async def bug(ctx, *, args = None):
 async def bump(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is in the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is in the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     elif ctx.message.server.id in bumped_servers:
         await client.say("{} This server is already bumped. Please try again after the bot restarts (`ad!uptime`).".format(error_img))
     else:
@@ -941,9 +941,9 @@ async def bump(ctx):
 async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Channel = None, *, message = None):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     else:
         author = ctx.message.author
         server = ctx.message.server
@@ -1105,9 +1105,9 @@ async def unsetup(ctx):
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
         if server.id in normal_servers:
             await client.say("Removing data... <a:customTyping:627863352735039489>")
@@ -1322,9 +1322,9 @@ async def test(ctx):
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
         if server.id in normal_servers:
             await client.say("Testing... <a:customTyping:627863352735039489>")
@@ -1596,9 +1596,9 @@ async def scan(ctx):
     author = ctx.message.author
     server = ctx.message.server
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
         await client.say("Scanning... <a:customTyping:627863352735039489>")
         ban = []
@@ -1640,9 +1640,9 @@ async def toggle(ctx):
     server = ctx.message.server
     chnl = client.get_channel(toggled_servers_chnl)
     if ctx.message.server.id in banned_servers:
-        await client.say("<:customXmark:472461705532669953> This server is on the ban list and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> This server is on the ban list and cannot use the bot.")
     elif ctx.message.author.id in banned_users:
-        await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
+        await client.say("<:customXmark:627861601029980160> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
         await client.say("Toggling... <a:customTyping:627863352735039489>")
         if server.id in toggled_servers:
