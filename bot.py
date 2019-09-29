@@ -677,7 +677,7 @@ async def invite(ctx):
     elif ctx.message.author.id in banned_users:
         await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
     else:
-        await client.say("Here is the link to invite the bot:\n \nHere is the link to invite the bot:\n \nhttps://discordapp.com/api/oauth2/authorize?client_id=627857176362483731&permissions=8&scope=bot")
+        await client.say("Here is the link to invite the bot:\n \nhttps://discordapp.com/api/oauth2/authorize?client_id=627857176362483731&permissions=8&scope=bot")
 
 # ad!getspecial
 @client.command(pass_context=True)
