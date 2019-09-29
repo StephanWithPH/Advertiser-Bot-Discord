@@ -13,11 +13,11 @@ import re
 Client = discord.Client()
 bot_prefix= "ad!"
 client = commands.Bot(command_prefix=bot_prefix)
-footer_text = "[+] Get STPHN Advertiser Bot: https://discord.gg/uptrwP5 [+]"
+footer_text = "[+] Get STPHN Advertiser Bot: BOT-LIST-LINK-HERE [+]"
 
 help_msg1 = "\nHelp commands:"
 help_msg1 += "```diff"
-help_msg1 += "\nCommunity Discord: https://discord.gg/uptrwP5"
+help_msg1 += "\nCommunity Discord: Under maintenance"
 help_msg1 += "\n- COMMANDS FOR EVERYONE (AND SOME FOR BANNED USERS)-"
 help_msg1 += "\nad!getspecial\n+ Shows you a list of ways to get a special msg."
 help_msg1 += "\nad!requestunban\n+ Request a server/user unban so u can use the bot again."
@@ -83,40 +83,40 @@ tos_msg += "\n**~~=~~** Breaking any of these rules will get you and/or your ser
 tos_msg += "\n "
 tos_msg += "\n**__Use ad!help to start your journey!__**"
 
-test_msg_img = "https://i.imgur.com/lv6DwLI.png"
-announcement_img = "https://i.imgur.com/eyjxXIe.png"
-new_server_img = "https://i.imgur.com/79FgWOd.png"
-special_server_img = "https://i.imgur.com/pRDbbnV.png"
-random_servers_chnl = '456082507515822080'
-console_chnl = '456082517204926466'
-logs_chnl = '456082848038912000'
-reports_users_chnl = '456082959292825602'
-reports_servers_chnl = '456083052813221910'
-reports_bugs_chnl = '456083111038681099'
-suggestions_chnl = '456083309882114059'
-banned_users_chnl = '456083401502621696'
-banned_servers_chnl = '456083470440202240'
-bot_mods_chnl = '456083576497373195'
-bot_admins_chnl = '456083652561076245'
-toggled_servers_chnl = '456083794689261579'
-special_servers_chnl = '456083859323486218'
-normal_servers_chnl = '456083942160859147'
-channels_chnl = '456084027711946752'
-log_channels_chnl = '456084136160133142'
-normal_servers_msgs_chnl = '456084262077333504'
-special_servers_msgs_chnl = '456084375239655445'
-servers_links_chnl = '456084482282356737'
-support_server = '465992768938835968'
-community_server = 'https://discord.gg/uptrwP5'
+test_msg_img = "https://i.imgur.com/IUGTANS.png"
+announcement_img = "https://i.imgur.com/njfKX3y.png"
+new_server_img = "https://i.imgur.com/jNj3qEq.png"
+special_server_img = "https://i.imgur.com/5FKHtg1.png"
+random_servers_chnl = '627860269061898240'
+console_chnl = '627860327941406750'
+logs_chnl = '627860392776826931'
+reports_users_chnl = '627860422564773888'
+reports_servers_chnl = '627860450440118272'
+reports_bugs_chnl = '627860483785097217'
+suggestions_chnl = '627860508183363594'
+banned_users_chnl = '627860535508992021'
+banned_servers_chnl = '627860566542647337'
+bot_mods_chnl = '627860593961074698'
+bot_admins_chnl = '627860631185522758'
+toggled_servers_chnl = '627860667638087731'
+special_servers_chnl = '627860700911501363'
+normal_servers_chnl = '627860727763435523'
+channels_chnl = '627860759451402241'
+log_channels_chnl = '627860781932871741'
+normal_servers_msgs_chnl = '627860819241336864'
+special_servers_msgs_chnl = '627860875499536384'
+servers_links_chnl = '627860909389512754'
+support_server = 'noidprovided'
+community_server = 'nolinkprovided'
 error_img = ':rotating_light:'
-x_img = '<:customXmark:472461705532669953>'
-check_img = '<:customCheck:472461756829007872>'
+x_img = '<:customXmark:627861601029980160>'
+check_img = '<:customCheck:627861601038368788>'
 owner_id = '183233556150091776'
 start_status = '- ad!help | ad!support'
 loading_status = '- Loading...'
 updating_status = '- Updating...'
-support_chnl = '465992768938835970'
-requestunban_chnl = '471740301812301825'
+support_chnl = '627862073593954324'
+requestunban_chnl = '627862140472131614'
 
 servers_links = []
 
@@ -498,7 +498,7 @@ async def support(ctx, *, args = None):
         if len(str(args)) > 1000:
             await client.say("{} The message cannot be longer than 1000 characters.".format(error_img))
         else:
-            await client.say("Sending... <a:customTyping:472460804852285480>")
+            await client.say("Sending... <a:customTyping:627863352735039489>")
             msg = "@everyone "
             msg += "```diff"
             msg += "\n- SUPPORT -"
@@ -527,7 +527,7 @@ async def requestunban(ctx, *, args = None):
         if len(str(args)) > 1000:
             await client.say("{} The message cannot be longer than 1000 characters.".format(error_img))
         else:
-            await client.say("Sending... <a:customTyping:472460804852285480>")
+            await client.say("Sending... <a:customTyping:627863352735039489>")
             msg = "@everyone "
             msg += "```diff"
             msg += "\n- UNBAN REQUEST -"
@@ -677,7 +677,7 @@ async def invite(ctx):
     elif ctx.message.author.id in banned_users:
         await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
     else:
-        await client.say("Here is the link to invite the bot:\n \nHere is the link to invite the bot:\n \nhttps://discordapp.com/oauth2/authorize?client_id=465944263130218507&scope=bot&permissions=8")
+        await client.say("Here is the link to invite the bot:\n \nHere is the link to invite the bot:\n \nhttps://discordapp.com/api/oauth2/authorize?client_id=627857176362483731&permissions=8&scope=bot")
 
 # ad!getspecial
 @client.command(pass_context=True)
@@ -688,7 +688,7 @@ async def getspecial(ctx):
     elif ctx.message.author.id in banned_users:
         await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
     else:
-        await client.say("You can do the following to get your server a special msg:\n \nBy mining crypto currency online: https://comingsoon.com \nBy donating a certain amount of money: https://comingsoon.com")
+        await client.say("You can do the following to get your server a special msg:\n \nBy donating a certain amount of money: SOON")
 
 # ad!tos
 @client.command(pass_context=True)
@@ -713,7 +713,7 @@ async def suggest(ctx, *, args = None):
             if len(str(args)) > 1000:
                 await client.say("{} The suggestion cannot be longer than 1000 characters.".format(error_img))
             else:
-                await client.say("Sending suggestion... <a:customTyping:472460804852285480>")
+                await client.say("Sending suggestion... <a:customTyping:627863352735039489>")
                 try:
                     chnl = client.get_channel(suggestions_chnl)
                     msg = "```diff"
@@ -778,7 +778,7 @@ async def report(ctx, option = None, target = None, *, reason = None):
                         if option == "user":
                             found = []
                             chnl = client.get_channel(reports_users_chnl)
-                            await client.say("Reporting... <a:customTyping:472460804852285480>")
+                            await client.say("Reporting... <a:customTyping:627863352735039489>")
                             try:
                                 msg = "```diff"
                                 msg += "\n- USER REPORT -"
@@ -795,7 +795,7 @@ async def report(ctx, option = None, target = None, *, reason = None):
                         elif option == "server":
                             found = []
                             chnl = client.get_channel(reports_servers_chnl)
-                            await client.say("Reporting... <a:customTyping:472460804852285480>")
+                            await client.say("Reporting... <a:customTyping:627863352735039489>")
                             try:
                                 msg = "```diff"
                                 msg += "\n- SERVER REPORT -"
@@ -836,7 +836,7 @@ async def bug(ctx, *, args = None):
                 author = ctx.message.author
                 server = ctx.message.server
                 chnl = client.get_channel(reports_bugs_chnl)
-                await client.say("Reporting the bug... <a:customTyping:472460804852285480>")
+                await client.say("Reporting the bug... <a:customTyping:627863352735039489>")
                 try:
                     msg = "```diff"
                     msg += "\n- BUG REPORT -"
@@ -864,7 +864,7 @@ async def bump(ctx):
         server = ctx.message.server
         author = ctx.message.author
         if server.id in normal_servers:
-            await client.say("Bumping... <a:customTyping:472460804852285480>")
+            await client.say("Bumping... <a:customTyping:627863352735039489>")
             try:
                 bumped_servers.append(server.id)
                 msgs = []
@@ -898,7 +898,7 @@ async def bump(ctx):
                     print("")
                 await client.say("{} Error in bumping the server!\nFor any help use `ad!support`.".format(error_img))
         elif server.id in special_servers:
-            await client.say("Bumping... <a:customTyping:472460804852285480>")
+            await client.say("Bumping... <a:customTyping:627863352735039489>")
             try:
                 bumped_servers.append(server.id)
                 msgs = []
@@ -982,7 +982,7 @@ async def setup(ctx, log_channel: discord.Channel = None, channel: discord.Chann
                 if len(str(message)) > 500:
                     await client.say("{} The message cannot be longer than 500 characters.".format(error_img))
                 else:
-                    await client.say("Starting setup... <a:customTyping:472460804852285480>")
+                    await client.say("Starting setup... <a:customTyping:627863352735039489>")
                     log = "```diff"
                     log += "\n--- STARTING SETUP LOGGER ---"
                     try:
@@ -1110,7 +1110,7 @@ async def unsetup(ctx):
         await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
         if server.id in normal_servers:
-            await client.say("Removing data... <a:customTyping:472460804852285480>")
+            await client.say("Removing data... <a:customTyping:627863352735039489>")
             log = "```diff"
             log += "\n--- STARTING UN-SETUP LOGGER ---"
             try:
@@ -1327,7 +1327,7 @@ async def test(ctx):
         await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
         if server.id in normal_servers:
-            await client.say("Testing... <a:customTyping:472460804852285480>")
+            await client.say("Testing... <a:customTyping:627863352735039489>")
             log = "```diff"
             log += "\n--- STARTING TEST LOGGER (NORMAL) ---"
             limit = 100000
@@ -1456,7 +1456,7 @@ async def test(ctx):
                     await client.say(log)
                     await client.say("{} Looks like there is an error!\nMake sure the bot has the required permissiosn and try again.\nIf you need any help you can use `ad!support`.".format(error_img))
         elif server.id in special_servers:
-            await client.say("Testing... <a:customTyping:472460804852285480>")
+            await client.say("Testing... <a:customTyping:627863352735039489>")
             log = "```diff"
             log += "\n--- STARTING TEST LOGGER (SPECIAL) ---"
             limit = 100000
@@ -1600,7 +1600,7 @@ async def scan(ctx):
     elif ctx.message.author.id in banned_users:
         await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
-        await client.say("Scanning... <a:customTyping:472460804852285480>")
+        await client.say("Scanning... <a:customTyping:627863352735039489>")
         ban = []
         fail = []
         for i in banned_users:
@@ -1644,7 +1644,7 @@ async def toggle(ctx):
     elif ctx.message.author.id in banned_users:
         await client.say("<:customXmark:472461705532669953> You are on the blacklist and cannot use the bot.")
     elif author.server_permissions.manage_server or author.id in bot_mods or author.id in bot_admins:
-        await client.say("Toggling... <a:customTyping:472460804852285480>")
+        await client.say("Toggling... <a:customTyping:627863352735039489>")
         if server.id in toggled_servers:
             try:
                 async for message in client.logs_from(chnl):
@@ -1717,10 +1717,10 @@ async def msg(ctx, option = None, target = None, *, args = None):
                 else:
                     if option == "user":
                         find = []
-                        await client.say("Searching for user... <a:customTyping:472460804852285480>")
+                        await client.say("Searching for user... <a:customTyping:627863352735039489>")
                         try:
                             user = await client.get_user_info(target)
-                            await client.say("{} User found: {}#{}!\nSending message... <a:customTyping:472460804852285480>".format(check_img, user.name, user.discriminator))
+                            await client.say("{} User found: {}#{}!\nSending message... <a:customTyping:627863352735039489>".format(check_img, user.name, user.discriminator))
                             try:
                                 await client.send_message(user, "{}\n \n:label: Message sent by: {} ### {}\n`(STPHN Advertiser Bot Staff Member)`".format(args, author, author.id))
                                 await client.say("{} Message sent!".format(check_img))
@@ -1740,12 +1740,12 @@ async def msg(ctx, option = None, target = None, *, args = None):
                     elif option == "server":
                         find = []
                         finish = []
-                        await client.say("Searching for server... <a:customTyping:472460804852285480>")
+                        await client.say("Searching for server... <a:customTyping:627863352735039489>")
                         for server in client.servers:
                             if server.id == target:
                                 try:
                                     if len(finish) == 0:
-                                        await client.say("{} Server found: {}!\nSending message... <a:customTyping:472460804852285480>".format(check_img, server.name))
+                                        await client.say("{} Server found: {}!\nSending message... <a:customTyping:627863352735039489>".format(check_img, server.name))
                                         find.append("+1")
                                         await client.send_message(server.owner, "{}\n \n:label: Message sent by: {} ### {}\n`(STPHN Advertiser Bot Staff Member)`".format(args, author, author.id))
                                         await client.say("{} Message sent!".format(check_img))
@@ -1795,7 +1795,7 @@ async def ban(ctx, option = None, target = None, *, reason = None):
                     if target in banned_users:
                         await client.say("{} This user is already banned!".format(error_img))
                     else:
-                        await client.say("Banning user... <a:customTyping:472460804852285480>")
+                        await client.say("Banning user... <a:customTyping:627863352735039489>")
                         await client.send_message(chnl, target)
                         banned_users.append(target)
                         a = []
@@ -1834,7 +1834,7 @@ async def ban(ctx, option = None, target = None, *, reason = None):
                     if target in banned_servers:
                         await client.say("{} This server is already banned!".format(error_img))
                     else:
-                        await client.say("Banning server... <a:customTyping:472460804852285480>")
+                        await client.say("Banning server... <a:customTyping:627863352735039489>")
                         await client.send_message(chnl2, target)
                         banned_servers.append(target)
                         a = []
@@ -1888,7 +1888,7 @@ async def unban(ctx, option = None, target = None):
             await client.say("{} Not all arguments were given!\nExamples:\n`ad!unban user 412201413335056386`.\n`ad!unban server 440108166789988353`.".format(error_img))
         else:
             if option == "user":
-                await client.say("Unbanning... <a:customTyping:472460804852285480>")
+                await client.say("Unbanning... <a:customTyping:627863352735039489>")
                 try:
                     async for message in client.logs_from(chnl):
                         if message.content == target:
@@ -1911,7 +1911,7 @@ async def unban(ctx, option = None, target = None):
                 except:
                     await client.say("{} There was an error while trying to unban that user!".format(error_img))
             elif option == "server":
-                await client.say("Unbanning... <a:customTyping:472460804852285480>")
+                await client.say("Unbanning... <a:customTyping:627863352735039489>")
                 try:
                     async for message in client.logs_from(chnl2):
                         if message.content == target:
@@ -1958,7 +1958,7 @@ async def reset(ctx, target = None):
             cnsl = client.get_channel(console_chnl)
             try:
                 find = []
-                await client.say("Searching for server... <a:customTyping:472460804852285480>")
+                await client.say("Searching for server... <a:customTyping:627863352735039489>")
                 for server in client.servers:
                     if server.id == target:
                         find.append(server.id)
@@ -1970,7 +1970,7 @@ async def reset(ctx, target = None):
                 else:
                     server = client.get_server(find[0])
                     await client.say("{} Server found ( {} )!".format(check_img, server.name))
-                    await client.say("Resetting the server... <a:customTyping:472460804852285480>")
+                    await client.say("Resetting the server... <a:customTyping:627863352735039489>")
                     try:
                         async for message in client.logs_from(ns):
                             if message.content == target:
@@ -2100,7 +2100,7 @@ async def link(ctx, target = None):
         if target == None:
             await client.say("{} No server ID given.".format(error_img))
         else:
-            await client.say("Searching for server... <a:customTyping:472460804852285480>")
+            await client.say("Searching for server... <a:customTyping:627863352735039489>")
             a = []
             for s in client.servers:
                 if s.id == target:
@@ -2185,7 +2185,7 @@ async def fbump(ctx, target = None):
             if target in normal_servers or target in special_servers:
                 try:
                     server = client.get_server(target)
-                    await client.say("{} Server found!\nBumping the server... <a:customTyping:472460804852285480>".format(check_img))
+                    await client.say("{} Server found!\nBumping the server... <a:customTyping:627863352735039489>".format(check_img))
                     if server.id in normal_servers:
                         try:
                             msgs = []
@@ -2222,7 +2222,7 @@ async def fbump(ctx, target = None):
                         except:
                             await client.say("{} Error in bumping the server!\nFor any help use `ad!support`.".format(error_img))
                     elif server.id in special_servers:
-                        await client.say("Bumping... <a:customTyping:472460804852285480>")
+                        await client.say("Bumping... <a:customTyping:627863352735039489>")
                         try:
                             msgs = []
                             found = []
@@ -2279,7 +2279,7 @@ async def announce(ctx, *, args = None):
         elif len(str(args)) > 1900:
             await client.say("{} The text cannot be longer than 1900 characters.".format(error_img))
         else:
-            await client.say("Sending announcement... <a:customTyping:472460804852285480>")
+            await client.say("Sending announcement... <a:customTyping:627863352735039489>")
             done = []
             fail = []
             pos = []
@@ -2324,7 +2324,7 @@ async def force(ctx):
     if ctx.message.author.bot: return
     author = ctx.message.author
     if author.id in bot_admins:
-        await client.say("Forcing advertisements... <a:customTyping:472460804852285480>")
+        await client.say("Forcing advertisements... <a:customTyping:627863352735039489>")
         try:
             total = []
             normal = []
@@ -2440,7 +2440,7 @@ async def log(ctx, *, args = None):
             if len(a) != 2:
                 await client.say("{} The command was used wrongly!\nExample: `ad!log SMALL UPDATE | The bot just got updated.`.".format(error_img))
             else:
-                await client.say("Sending logs... <a:customTyping:472460804852285480>")
+                await client.say("Sending logs... <a:customTyping:627863352735039489>")
                 done = []
                 fail = []
                 pos = []
@@ -2494,9 +2494,9 @@ async def special(ctx, option = None, target = None):
                 await client.say("{} That server is already in the special list.".format(error_img))
             else:
                 try:
-                    await client.say("Searching for the server... <a:customTyping:472460804852285480>")
+                    await client.say("Searching for the server... <a:customTyping:627863352735039489>")
                     s = client.get_server(target)
-                    await client.say("{} Server found ( {} )!\nAdding the server to the special list... <a:customTyping:472460804852285480>".format(check_img, s.name))
+                    await client.say("{} Server found ( {} )!\nAdding the server to the special list... <a:customTyping:627863352735039489>".format(check_img, s.name))
                     try:
                         if s.id in normal_servers:
                             log = "```diff"
@@ -2578,9 +2578,9 @@ async def special(ctx, option = None, target = None):
                     await client.say("{} Server not found!\nMake sure the bot is in that server and it has the required permissions.".format(error_img))
         elif option == "del":
             try:
-                await client.say("Searching for the server... <a:customTyping:472460804852285480>")
+                await client.say("Searching for the server... <a:customTyping:627863352735039489>")
                 s = client.get_server(target)
-                await client.say("{} Server found ( {} )!\nRemoving the server from the special list... <a:customTyping:472460804852285480>".format(check_img, s.name))
+                await client.say("{} Server found ( {} )!\nRemoving the server from the special list... <a:customTyping:627863352735039489>".format(check_img, s.name))
                 try:
                     if s.id in special_servers:
                         log = "```diff"
