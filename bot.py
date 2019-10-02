@@ -57,7 +57,7 @@ help_msg4 = "```diff"
 help_msg4 += "\n- COMMANDS FOR BOT ADMINISTRATORS -"
 help_msg4 += "\nad!mod <add/del> <user>\n+ Adds or removes a bot moderator."
 help_msg4 += "\nad!fbump <server id>\n+ Forces the bot to advertise the server with the matching ID as the one specified."
-help_msg4 += "\nad!announce <text>\n+ Sends an announcement to all servers."
+# help_msg4 += "\nad!announcement <text>\n+ Sends an announcement to all servers."
 help_msg4 += "\nad!force\n+ Forces the bot to advertise."
 help_msg4 += "\nad!log <message>\n+ Logs a message."
 help_msg4 += "\nad!special <add/del> <server id>\n+ Adds or removes a server from the special list."
@@ -2267,9 +2267,9 @@ async def fbump(ctx, target = None):
     else:
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
-# ad!announce <text>
+# ad!announcement <text>
 @client.command(pass_context=True)
-async def announce(ctx, *, args = None):
+async def announcement(ctx, *, args = None):
     if ctx.message.author.bot: return
     author = ctx.message.author
     cnsl = client.get_channel(console_chnl)
