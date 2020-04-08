@@ -33,7 +33,7 @@ help_msg1 += "\nad!bug <message>\n+ Reports a bug to the bot moderators."
 help_msg1 += "\nad!suggest <suggestion>\n+ Sends a suggestion to the bot moderators."
 help_msg1 += "\nad!uptime\n+ Shows you how long the bot's been online for."
 help_msg1 += "\nad!report <user/server> <id> <reason>\n+ Reports a server or user to the bot moderators."
-help_msg1 += "\nad!bump\n+ Forces the bot to advertise the server which the command is run in. This can only be used once every day."
+help_msg1 += "\nad!bump\n+ [TEMPORARILY DISABLED DUE TO A BUG!] Forces the bot to advertise the server which the command is run in. This can only be used once every day."
 help_msg1 += "\n```"
 
 help_msg2 = "```diff"
@@ -852,7 +852,7 @@ async def bug(ctx, *, args = None):
                     await client.say("{} Error in reporting the bug!".format(error_img))
 
 # ad!bump
-@client.command(pass_context=True)
+'''@client.command(pass_context=True)
 async def bump(ctx):
     if ctx.message.author.bot: return
     if ctx.message.server.id in banned_servers:
@@ -935,7 +935,7 @@ async def bump(ctx):
                 await client.say("{} Error in bumping the server!\nFor any help use `ad!support`.".format(error_img))
         else:
             await client.say("{} This server is not being advertised. Use `ad!setup` to set it up.".format(error_img))
-
+'''            
 ''' COMMANDS FOR SERVER MANAGERS '''
 # ad!setup [log channel] [channel] [message]
 @client.command(pass_context=True)
