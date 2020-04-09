@@ -2678,5 +2678,19 @@ async def say(ctx, *, args = None):
         await client.say("{} This command can only be used by the bot's administrators.".format(error_img))
 
 # TURNS THE BOT ON
-client.run(os.environ['BOT_TOKEN'])
+#client.run(os.environ['BOT_TOKEN'])
 #client.run("PC-TOKEN")
+
+coro = WebSocketCommonProtocol.run()  # you don't need any wrapper
+task = asyncio.ensure_future(coro)
+
+try:
+
+    #start discord client
+    client.run(os.environ['BOT_TOKEN'])
+
+finally:
+
+     # retrieve exception if any:
+    if task.done() and not task.cancelled():
+        task.exception()  # this doesn't raise anything, just mark exception retrieved
