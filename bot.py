@@ -2681,16 +2681,9 @@ async def say(ctx, *, args = None):
 #client.run(os.environ['BOT_TOKEN'])
 #client.run("PC-TOKEN")
 
-coro = WebSocketCommonProtocol.run()  # you don't need any wrapper
-task = asyncio.ensure_future(coro)
+def exception_handler(loop,context):
+   print("Caught the following exception")
+   print(context['message'])
 
-try:
-
-    #start discord client
-    client.run(os.environ['BOT_TOKEN'])
-
-finally:
-
-     # retrieve exception if any:
-    if task.done() and not task.cancelled():
-        task.exception()  # this doesn't raise anything, just mark exception retrieved
+client.loop.set_exception_handler(exception_handler)
+client.run(os.environ['BOT_TOKEN'])
