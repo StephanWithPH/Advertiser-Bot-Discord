@@ -85,7 +85,7 @@ tos_msg += "\n "
 tos_msg += "\n**__Use ad!help to start your journey!__**"
 
 test_msg_img = "https://i.imgur.com/IUGTANS.png"
-announcement_img = "https://i.imgur.com/njfKX3y.png"
+announcement_img = "https://i.imgur.com/MV6147R.png"
 new_server_img = "https://i.imgur.com/jNj3qEq.png"
 special_server_img = "https://i.imgur.com/5FKHtg1.png"
 random_servers_chnl = '627860269061898240'
