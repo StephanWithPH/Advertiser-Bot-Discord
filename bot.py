@@ -84,7 +84,7 @@ tos_msg += "\n**~~=~~** Breaking any of these rules will get you and/or your ser
 tos_msg += "\n "
 tos_msg += "\n**__Use ad!help to start your journey!__**"
 
-test_msg_img = "https://i.imgur.com/IUGTANS.png"
+test_msg_img = "https://i.imgur.com/gTcIlJE.png"
 announcement_img = "https://i.imgur.com/MV6147R.png"
 new_server_img = "https://i.imgur.com/jNj3qEq.png"
 special_server_img = "https://i.imgur.com/whikqzt.png"
