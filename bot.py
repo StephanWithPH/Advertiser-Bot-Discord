@@ -13,7 +13,7 @@ import re
 Client = discord.Client()
 bot_prefix= "ad!"
 client = commands.Bot(command_prefix=bot_prefix)
-footer_text = "[+] Get STPHN Advertiser Bot: BOT-LIST-LINK-HERE [+]"
+footer_text = "[+] Get Advertiser Bot: https://discordbotlist.com/bots/627857176362483731 [+]"
 
 help_msg1 = "\nHelp commands:"
 help_msg1 += "```diff"
